@@ -23,23 +23,23 @@
             <h2>
                 Guess 'till yer #blessed!
             </h2>
-            <p>Welcome! Enter a number between 1 and 20 in the circle below. You'll get four attempts - if you guess correctly you'll #be #blessed!</p>
-            <content class="game-container">
-                <input id='user-guess' type='number' placeholder="feeling #blessed?">
+            <p>Welcome! Enter a whole number between 1 and 20 in the circle below. You'll get four attempts - if you guess correctly you'll #be #blessed!</p>
+            <content id="game-container">
+                <input id='user-guess' type='number' placeholder="feeling #blessed?" min="1" max="20">
                 <button id='guess-button'>Click and see!</button>
                 <div>
-                    <span id='guesses-remaining-display'>x</span> guesses remaining!
+                    <span id='guesses-display'>x</span> guesses remaining!
                 </div>
                 <div id='guess-feedback-display'>
                     Too high or too low
                 </div>
-                <div id="message-play-agin-container">
+            </content>
+                <content id="play-agin-container">
                     <div id='win-lose-message-display'>
                         You won/lost!
                     </div>
                     <button id="play-again-button">Play Again?</button>
-                </div>
-            </content>
+                </content>
         </section>
     </main>
     <footer>
