@@ -25,12 +25,12 @@
             </h2>
             <p class="welcome">Welcome! Enter a whole number between 1 and 20 in the circle below. You'll get four attempts - if you guess correctly you win!</p>
             <content id="game-container">
-                <input id='user-guess' type='number' min="1" max="20">
+                <input id='user-guess' type='number' min="1" max="20" placeholder="❔">
                 <button class="button" id='guess-button'>Click and see!</button>
-                <div>
-                    <span id='guesses-display'>4</span> guesses remaining!
+                <div class="guesses-text" id='guess-feedback-display'></div>
+                <div class="guesses-text">
+                    <span class='welcome' id='guesses-display'>4</span> guesses remaining!
                 </div>
-                <div id='guess-feedback-display'></div>
             </content>
                 <content id="play-again-container">
                     <div id='win-lose-message-display'>

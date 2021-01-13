@@ -19,8 +19,8 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.hdwallpaperspulse.com%2Fwp-content%2Fuploads%2F2015%2F11%2F18%2Fwaves-surface-pattern-background.jpg&f=1&nofb=1');
-    background-attachment: fixed;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.ytimg.com%2Fvi%2F0_jNjpVxUt0%2Fmaxresdefault.jpg&f=1&nofb=1');
+    background-size: cover;
 }
 
 main {
@@ -137,8 +137,8 @@ footer {
 
   .game-title {
       color: white;
-      background-color: teal;
-      border: solid palegreen 3px;
+      background-color: lightseagreen;
+      border: solid white 3px;
       width: 400px;
       padding: 20px;
     }
@@ -148,9 +148,11 @@ footer {
         text-align: center;
         width: 400px;
         color: white;
-        background-color: teal;
-        border: solid palegreen 3px;
+        background-color: lightgreen;
+        border: solid white 3px;
         padding: 20px;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
         
     }
     
@@ -159,8 +161,8 @@ footer {
         height: 50px;
         border-radius: 25px;
         font-size: 1.5rem;
-        background-color: teal;
-        border: solid palegreen 3px;
+        background-color: darkorange;
+        border: solid white 3px;
         color: white;
     }
     
@@ -169,8 +171,47 @@ footer {
         height: 100px;
         font-size: 3rem;
         text-align: center;
-        background-color: teal;
-        border: solid palegreen 3px;
+        background-color: gold;
+        border: solid white 3px;
         color: white;
         border-radius: 50px;
+        margin-bottom: 15px;
   }
+
+  .guesses-text {
+    font-family:  Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: darkred;
+    border: solid white 3px;
+    color: white;
+}
+
+#guess-feedback-display {
+    background-color: red;
+    padding: 10px;
+    border: white solid 3px;
+    color: white;
+    display: none;
+}
+
+#guesses-display {
+    background-color: white;
+    color: darkred;
+    border: solid darkviolet 3px;
+    font-weight: bolder;
+}
+
+#win-lose-message-display {
+    color: white;
+    background-color: gold;
+    border: solid white 3px;
+    width: 400px;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fbestanimations.com%2Fimages%2Flight-gold-glitter-bg-2.gif&f=1&nofb=1');
+}
