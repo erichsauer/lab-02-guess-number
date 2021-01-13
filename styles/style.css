@@ -139,13 +139,14 @@ footer {
 }
 
 .button {
-    width: 200px;
     height: 50px;
     border-radius: 25px;
     font-size: 1.5rem;
     background-color: darkorange;
     border: solid white 3px;
     color: white;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #user-guess {
