@@ -21,33 +21,51 @@ guessesDisplay.textContent = guessesRemaining;
 
 guessButton.addEventListener('click', () => {
     const userGuessNumber = userGuess.valueAsNumber;
-    if (userGuessNumber > 20) {
-        alert('Woah there buckaroo. Please keep your guess below 20');
-        return;
-        
-    } else {
 
-        if (compareNumbers(randomNumber, userGuessNumber) === -1) {
-            guessesRemaining--;
-            numberOfGuesses++;
-            guessFeedback.textContent = 'Woops, too low! Guess again.';
-            guessesDisplay.textContent = guessesRemaining;
-        } else if (compareNumbers(randomNumber, userGuessNumber) === 1) {
-            guessesRemaining--;
-            numberOfGuesses++;
-            guessFeedback.textContent = 'Woops, too high! Guess again.';
-            guessesDisplay.textContent = guessesRemaining;
-        } else if (compareNumbers(randomNumber, userGuessNumber) === 0) {
-            numberOfGuesses++;
-            guessFeedback.textContent = `Hooray! You won in ${numberOfGuesses} guesses!`;
-            guessesDisplay.textContent = guessesRemaining;
-        }
+    if (userGuessNumber > 20) {
+        alert('Woah there buckaroo. Gotta keep your guess below 20. Try again!');
+        return;
+    }
+
+    if (compareNumbers(randomNumber, userGuessNumber) === -1) {
+        guessesRemaining--;
+        numberOfGuesses++;
         
-        console.log('guesses:', guessesRemaining, 'random#:', randomNumber, guessFeedback.textContent);
-    // No tries remaining?
-    // Display lose message
-    // Disable game play
-    // Correct guess?
-    // Display win message
-    // Disable game play
-    }});
+        guessFeedback.textContent = 'Woops, too low! Guess again.';
+        guessesDisplay.textContent = guessesRemaining;
+    } else if (compareNumbers(randomNumber, userGuessNumber) === 1) {
+        guessesRemaining--;
+        numberOfGuesses++;
+
+        guessFeedback.textContent = 'Woops, too high! Guess again.';
+        guessesDisplay.textContent = guessesRemaining;
+    } else if (compareNumbers(randomNumber, userGuessNumber) === 0) {
+        numberOfGuesses++;
+        gameContainer.style.display = 'none';
+        playAgainContainer.style.display = 'flex';
+
+        winLoseMessageDisplay.textContent = `Hooray! You won in ${numberOfGuesses} guesses!`;
+        guessesDisplay.textContent = guessesRemaining;
+    }
+
+    if (guessesRemaining === 0) {
+        gameContainer.style.display = 'none';
+        playAgainContainer.style.display = 'flex';
+
+        winLoseMessageDisplay.textContent = `Oof! Let's try that again!`;
+        guessesDisplay.textContent = guessesRemaining;
+    }
+});
+
+playAgainButton.addEventListener('click', () => {
+    
+    gameContainer.style.display = 'flex';
+    playAgainContainer.style.display = 'none';
+
+    guessesRemaining = 4;
+    numberOfGuesses = 0;
+    randomNumber = Math.ceil(Math.random() * 20);
+
+    guessesDisplay.textContent = guessesRemaining;
+    guessFeedback.textContent = '';
+});

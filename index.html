@@ -20,25 +20,23 @@
     </header>
     <main>
         <section class="main-section">
-            <h2>
-                Guess 'till yer #blessed!
+            <h2 class="game-title">
+                🔍 Secret Number Game 🔎
             </h2>
-            <p>Welcome! Enter a whole number between 1 and 20 in the circle below. You'll get four attempts - if you guess correctly you'll #be #blessed!</p>
+            <p class="welcome">Welcome! Enter a whole number between 1 and 20 in the circle below. You'll get four attempts - if you guess correctly you win!</p>
             <content id="game-container">
-                <input id='user-guess' type='number' placeholder="feeling #blessed?" min="1" max="20">
-                <button id='guess-button'>Click and see!</button>
+                <input id='user-guess' type='number' min="1" max="20">
+                <button class="button" id='guess-button'>Click and see!</button>
                 <div>
-                    <span id='guesses-display'>x</span> guesses remaining!
+                    <span id='guesses-display'>4</span> guesses remaining!
                 </div>
-                <div id='guess-feedback-display'>
-                    Too high or too low
-                </div>
+                <div id='guess-feedback-display'></div>
             </content>
-                <content id="play-agin-container">
+                <content id="play-again-container">
                     <div id='win-lose-message-display'>
                         You won/lost!
                     </div>
-                    <button id="play-again-button">Play Again?</button>
+                    <button class="button" id="play-again-button">Play Again?</button>
                 </content>
         </section>
     </main>
