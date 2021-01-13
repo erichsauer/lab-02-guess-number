@@ -54,7 +54,7 @@ guessButton.addEventListener('click', () => {
         playAgainContainer.style.display = 'flex';
         winLoseMessageDisplay.style.backgroundImage = "url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F76%2F75%2FW3DGBa.gif&f=1&nofb=1')";
         
-        winLoseMessageDisplay.textContent = `Oof! Let's try that again!`;
+        winLoseMessageDisplay.textContent = `Oof! Better luck next time!`;
         guessesDisplay.textContent = guessesRemaining;
     }
 });
@@ -71,4 +71,5 @@ playAgainButton.addEventListener('click', () => {
 
     guessesDisplay.textContent = guessesRemaining;
     guessFeedback.textContent = '';
+    userGuess.value = '';
 });

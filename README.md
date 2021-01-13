@@ -39,11 +39,11 @@
         reset message/input display values
 
 
-Move UI work into functions for discrete UI updating tasks:
+<!-- Move UI work into functions for discrete UI updating tasks:
 
 Decrementing tries
 Display of too low message
 Display of too high message
 Disable game play
 Display of Lose Game
-Display of Win Game
+Display of Win Game -->

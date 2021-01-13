@@ -141,6 +141,9 @@ footer {
       border: solid white 3px;
       width: 400px;
       padding: 20px;
+      text-align: center;
+      font-family: 'Chewy', Arial, Helvetica, sans-serif;
+      letter-spacing: 2px;
     }
     
     .welcome {
@@ -204,6 +207,8 @@ footer {
 }
 
 #win-lose-message-display {
+    font-family: 'Chewy', Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
     color: white;
     background-color: gold;
     border: solid white 3px;
