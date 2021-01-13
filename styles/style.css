@@ -19,7 +19,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.ytimg.com%2Fvi%2F0_jNjpVxUt0%2Fmaxresdefault.jpg&f=1&nofb=1');
+    background-image: url('https://shlunk.files.wordpress.com/2013/01/blue-sky.jpg');
     background-size: cover;
 }
 
@@ -79,8 +79,6 @@ header img {
     height: var(--header-height);
 }
 
-
-
 content {
     width: 80%;
 }
@@ -99,89 +97,70 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
 
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
+#game-container {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
+#play-again-container {
+    display: none;
+    flex-direction: column;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
+.game-title {
+    color: white;
+    background-color: lightseagreen;
+    border: solid white 3px;
+    width: 450px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Chewy', Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
 
+.welcome {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    width: 300px;
+    color: white;
+    background-color: lightgreen;
+    border: solid white 3px;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    background-color: darkorange;
+    border: solid white 3px;
+    color: white;
+}
+
+#user-guess {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    text-align: center;
+    background-color: gold;
+    border: solid white 3px;
+    color: white;
+    border-radius: 50px;
+    margin-bottom: 15px;
   }
 
-  #game-container {
-      display: flex;
-      flex-direction: column;
-      height: 300px;
-      align-items: center;
-      justify-content: space-evenly;
-    }
-    
-    #play-again-container {
-        display: none;
-        flex-direction: column;
-        height: 200px;
-        align-items: center;
-        justify-content: space-evenly;
-  }
-
-  .game-title {
-      color: white;
-      background-color: lightseagreen;
-      border: solid white 3px;
-      width: 400px;
-      padding: 20px;
-      text-align: center;
-      font-family: 'Chewy', Arial, Helvetica, sans-serif;
-      letter-spacing: 2px;
-    }
-    
-    .welcome {
-        font-family: Helvetica, Arial, sans-serif;
-        text-align: center;
-        width: 400px;
-        color: white;
-        background-color: lightgreen;
-        border: solid white 3px;
-        padding: 20px;
-        margin-bottom: 15px;
-        font-size: 1.3rem;
-        
-    }
-    
-    .button {
-        width: 200px;
-        height: 50px;
-        border-radius: 25px;
-        font-size: 1.5rem;
-        background-color: darkorange;
-        border: solid white 3px;
-        color: white;
-    }
-    
-    #user-guess {
-        width: 100px;
-        height: 100px;
-        font-size: 3rem;
-        text-align: center;
-        background-color: gold;
-        border: solid white 3px;
-        color: white;
-        border-radius: 50px;
-        margin-bottom: 15px;
-  }
-
-  .guesses-text {
+.guesses-text {
     font-family:  Helvetica, Arial, sans-serif;
     margin-top: 20px;
     font-size: 1.5rem;
