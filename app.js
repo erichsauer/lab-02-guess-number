@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { compareNumbers } from '../utils.js';
+import { compareNumbers } from 'utils.js';
 
 const gameContainer = document.getElementById('game-container');
 const userGuess = document.getElementById('user-guess');
