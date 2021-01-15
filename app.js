@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { compareNumbers } from './utils.js';
+import { compareNumbers, toggleDisplay, updateText } from './utils.js';
 
 const gameContainer = document.getElementById('game-container');
 const userGuess = document.getElementById('user-guess');
@@ -11,65 +11,64 @@ const winLoseMessageDisplay = document.getElementById('win-lose-message-display'
 const playAgainButton = document.getElementById('play-again-button');
 
 // initialize state
-
 let guessesRemaining = 4;
 let numberOfGuesses = 0;
 let randomNumber = Math.ceil(Math.random() * 20);
-guessesDisplay.textContent = guessesRemaining;
+
+const lowGuess = 'Woops, too low! Guess again.';
+const highGuess = 'Woops, too high! Guess again.';
+const loseGame = `Oof! Better luck next time!`;
 
 // set event listeners to update state and DOM
 
 guessButton.addEventListener('click', () => {
-    const userGuessNumber = userGuess.valueAsNumber;
-    guessFeedback.style.display = 'block';
-    
+    ++numberOfGuesses;
+    --guessesRemaining;
+    console.log(randomNumber);
+
+    let userGuessNumber = Number(userGuess.value);
+    let winGuess = `Hooray! You won in ${numberOfGuesses} guesses!`;
+
+    updateText(guessesDisplay, guessesRemaining);
+    toggleDisplay(guessFeedback, 'block');
+
     if (userGuessNumber > 20) {
         alert('Woah there buckaroo. Gotta keep your guess below 20. Try again!');
         return;
     }
-    
+
     if (compareNumbers(randomNumber, userGuessNumber) === -1) {
-        guessesRemaining--;
-        numberOfGuesses++;
-        
-        guessFeedback.textContent = 'Woops, too low! Guess again.';
-        guessesDisplay.textContent = guessesRemaining;
+        updateText(guessFeedback, lowGuess);
+
     } else if (compareNumbers(randomNumber, userGuessNumber) === 1) {
-        guessesRemaining--;
-        numberOfGuesses++;
-        
-        guessFeedback.textContent = 'Woops, too high! Guess again.';
-        guessesDisplay.textContent = guessesRemaining;
+        updateText(guessFeedback, highGuess);
+
     } else if (compareNumbers(randomNumber, userGuessNumber) === 0) {
-        numberOfGuesses++;
-        gameContainer.style.display = 'none';
-        playAgainContainer.style.display = 'flex';
-        
-        winLoseMessageDisplay.textContent = `Hooray! You won in ${numberOfGuesses} guesses!`;
-        guessesDisplay.textContent = guessesRemaining;
+        toggleDisplay(gameContainer, 'none');
+        toggleDisplay(playAgainContainer, 'flex');
+        updateText(winLoseMessageDisplay, winGuess);
     }
-    
+
     if (guessesRemaining === 0) {
-        gameContainer.style.display = 'none';
-        playAgainContainer.style.display = 'flex';
+        toggleDisplay(gameContainer, 'none');
+        toggleDisplay(playAgainContainer, 'flex');
+        updateText(winLoseMessageDisplay, loseGame);
+        updateText(guessesDisplay, guessesRemaining);
         winLoseMessageDisplay.style.backgroundImage = "url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F76%2F75%2FW3DGBa.gif&f=1&nofb=1')";
-        
-        winLoseMessageDisplay.textContent = `Oof! Better luck next time!`;
-        guessesDisplay.textContent = guessesRemaining;
     }
 });
 
 playAgainButton.addEventListener('click', () => {
-    
-    gameContainer.style.display = 'flex';
-    playAgainContainer.style.display = 'none';
-    guessFeedback.style.display = 'none';
-    
+
+    toggleDisplay(gameContainer, 'flex');
+    toggleDisplay(playAgainContainer, 'none');
+    toggleDisplay(guessFeedback, 'none');
+
     guessesRemaining = 4;
     numberOfGuesses = 0;
     randomNumber = Math.ceil(Math.random() * 20);
 
-    guessesDisplay.textContent = guessesRemaining;
-    guessFeedback.textContent = '';
+    updateText(guessesDisplay, guessesRemaining);
+    updateText(guessFeedback, '');
     userGuess.value = '';
 });
